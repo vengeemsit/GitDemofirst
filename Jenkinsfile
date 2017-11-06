@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('DEV Unit Test') {
-      steps {
-        bat 'mvn -v'
+      parallel {
+        stage('DEV Unit Test') {
+          steps {
+            bat 'mvn -v'
+          }
+        }
+        stage('Code Analysis') {
+          steps {
+            sh 'mvn --version'
+          }
+        }
       }
     }
     stage('SIT Test') {
