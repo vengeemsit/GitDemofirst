@@ -7,8 +7,17 @@ pipeline {
       }
     }
     stage('SIT Test') {
-      steps {
-        sh 'docker -v'
+      parallel {
+        stage('SIT Test') {
+          steps {
+            sh 'docker -v'
+          }
+        }
+        stage('SIT Sanity check') {
+          steps {
+            sh 'mvn -v'
+          }
+        }
       }
     }
   }
