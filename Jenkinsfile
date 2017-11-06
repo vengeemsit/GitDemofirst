@@ -13,6 +13,11 @@ pipeline {
             sh 'mvn --version'
           }
         }
+        stage('Integration Test') {
+          steps {
+            sh 'mvn --version'
+          }
+        }
       }
     }
     stage('SIT Test') {
