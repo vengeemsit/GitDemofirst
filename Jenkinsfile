@@ -20,5 +20,10 @@ pipeline {
         }
       }
     }
+    stage('UAT') {
+      steps {
+        echo 'success'
+      }
+    }
   }
 }
