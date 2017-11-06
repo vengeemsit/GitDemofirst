@@ -30,6 +30,7 @@ pipeline {
         stage('SIT Sanity check') {
           steps {
             sh 'mvn -v'
+            build 'CalculatorMaven'
           }
         }
       }
