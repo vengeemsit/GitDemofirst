@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('DEV Test') {
+    stage('DEV Unit Test') {
       steps {
         bat 'mvn -v'
       }
